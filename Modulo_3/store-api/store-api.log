@@ -1,0 +1,57 @@
+2022-09-28T21:54:41.335Z [store-api] error POST  - Name, CPF, Phone, Email e Adress são obrigatórios
+2022-09-28T21:55:16.253Z [store-api] error POST  - Name, CPF, Phone, Email e Adress são obrigatórios
+2022-09-28T23:40:21.687Z [store-api] error POST  - Name, CPF, Phone, Email e Adress são obrigatórios
+2022-09-29T03:04:55.323Z [store-api] error POST  - Name, CPF, Phone, Email e Adress são obrigatórios
+2022-09-29T03:05:58.133Z [store-api] info POST /client - {"name":"Felipe","cpf":"123456789","phone":"11123654","email":"felipe@teste.com","adress":"Rua 1"}
+2022-09-29T03:30:44.817Z [store-api] error GET  - clientService.getClients is not a function
+2022-09-29T03:31:11.090Z [store-api] error GET  - client is not defined
+2022-09-29T03:31:11.094Z [store-api] error GET  - Cannot set headers after they are sent to the client
+2022-09-29T03:31:53.474Z [store-api] info GET /clients
+2022-09-29T03:42:41.912Z [store-api] info GET /client 
+2022-09-29T03:43:04.276Z [store-api] info GET /client Id: 1
+2022-09-29T03:51:07.892Z [store-api] info POST /client - {"name":"Bianca","cpf":"321","phone":"123456","email":"B@teste.com","adress":"Rua 2"}
+2022-09-29T03:51:13.582Z [store-api] info GET /clients
+2022-09-29T03:51:21.755Z [store-api] info DELETE /client Id: 2
+2022-09-29T03:51:29.964Z [store-api] info GET /client Id: 2
+2022-09-29T03:51:34.560Z [store-api] info GET /client Id: 2
+2022-09-29T03:52:04.824Z [store-api] info GET /client Id: 2
+2022-09-29T03:52:10.023Z [store-api] info GET /clients
+2022-09-29T04:37:44.063Z [store-api] info POST /client - {"client_id":3,"name":"Bianca","cpf":"321","phone":"123456","email":"B@teste.com","adress":"Rua 2"}
+2022-09-29T04:38:18.313Z [store-api] info UPDATE /client - undefined
+2022-09-29T04:38:35.181Z [store-api] info GET /clients
+2022-09-29T04:43:48.576Z [store-api] info POST /client - {"client_id":4,"name":"Teste","cpf":"321453","phone":"123456342","email":"B@teste.com","adress":"Rua 2"}
+2022-09-29T04:47:48.479Z [store-api] info UPDATE /client - undefined
+2022-09-29T04:48:45.960Z [store-api] info UPDATE /client - undefined
+2022-09-29T04:49:01.622Z [store-api] info GET /clients
+2022-09-29T04:52:25.839Z [store-api] info UPDATE /client - undefined
+2022-09-29T14:39:27.936Z [store-api] info POST /supplier - {"supplier_id":1,"name":"Fornecedor 1","cnpj":"123456789","phone":"123456342","email":"B@teste.com","adress":"Rua 21"}
+2022-09-29T14:40:00.269Z [store-api] info GET /suppliers
+2022-09-29T14:40:10.175Z [store-api] info GET /supplier Id: 1
+2022-09-29T14:40:26.815Z [store-api] error PUT  - Supplier ID, Name, CNPJ, Phone, Email e Adress são obrigatórios
+2022-09-29T14:40:44.949Z [store-api] info UPDATE /supplier - undefined
+2022-09-29T14:56:03.115Z [store-api] error POST  - null value in column "supplier_id" of relation "products" violates not-null constraint
+2022-09-29T14:56:56.908Z [store-api] error POST  - null value in column "supplier_id" of relation "products" violates not-null constraint
+2022-09-29T14:57:38.364Z [store-api] error POST  - null value in column "product_id" of relation "products" violates not-null constraint
+2022-09-29T14:58:10.319Z [store-api] info POST /product - {"product_id":3,"supplier_id":1,"name":"Notebook Acer","description":"Notebook Gamer","value":"5000","stock":5}
+2022-09-29T15:04:19.275Z [store-api] info UPDATE /product - undefined
+2022-09-29T15:04:29.078Z [store-api] info GET /products
+2022-09-29T15:04:51.117Z [store-api] info UPDATE /product - undefined
+2022-09-29T15:05:00.086Z [store-api] info GET /products
+2022-09-29T21:21:47.442Z [store-api] info POST /product - {"product_id":4,"supplier_id":1,"name":"Notebook HP","description":"Notebook Gamer I7 16GB","value":"4500","stock":10}
+2022-09-29T21:22:00.295Z [store-api] error POST  - O supplier_id não existe
+2022-09-29T21:22:07.074Z [store-api] info GET /products
+2022-09-29T22:13:29.947Z [store-api] info GET /products
+2022-09-29T22:13:48.121Z [store-api] info GET /clients
+2022-09-29T22:13:54.779Z [store-api] error POST  - Name, description, value, stock e supplier_id são obrigatórios
+2022-09-29T22:14:39.470Z [store-api] error POST  - date/time field value out of range: "29/09/2022"
+2022-09-29T22:14:47.977Z [store-api] error POST  - date/time field value out of range: "28/09/2022"
+2022-09-29T22:15:13.677Z [store-api] info POST /sale - {"sale_id":1,"client_id":1,"product_id":3,"value":"5600","date":"2022-09-28T03:00:00.000Z"}
+2022-09-29T22:15:26.367Z [store-api] info GET /sales
+2022-09-29T22:51:36.607Z [store-api] error POST  - error is not defined
+2022-09-29T22:52:11.839Z [store-api] error POST  - O Client ID não existe
+2022-09-29T22:52:17.500Z [store-api] error POST  - O Client ID não existeO Product ID não existe
+2022-09-29T22:52:30.512Z [store-api] error POST  - O Client ID não existe
+O Product ID não existe
+2022-09-29T22:53:12.022Z [store-api] error POST  - O Client ID não existe
+O Product ID não existe
+2022-09-29T22:53:22.088Z [store-api] error POST  - O Client ID não existe O Product ID não existe
