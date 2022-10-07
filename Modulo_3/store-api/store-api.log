@@ -55,3 +55,81 @@ O Product ID não existe
 2022-09-29T22:53:12.022Z [store-api] error POST  - O Client ID não existe
 O Product ID não existe
 2022-09-29T22:53:22.088Z [store-api] error POST  - O Client ID não existe O Product ID não existe
+2022-10-04T20:39:05.047Z [store-api] info GET /clients
+2022-10-04T20:39:19.532Z [store-api] error GET  - The argument passed to findOne must be an options object, use findByPk if you wish to pass a single primary key value
+2022-10-04T20:39:59.761Z [store-api] info GET /client Id: 2
+2022-10-04T20:40:04.099Z [store-api] info GET /client Id: 3
+2022-10-04T20:42:21.194Z [store-api] info UPDATE /client - undefined
+2022-10-04T20:42:28.850Z [store-api] info GET /client Id: 3
+2022-10-04T20:48:53.890Z [store-api] info GET /suppliers
+2022-10-04T20:49:01.594Z [store-api] info GET /supplier Id: 1
+2022-10-04T20:49:56.744Z [store-api] error POST  - Unexpected token 
+ in JSON at position 100
+2022-10-04T20:50:14.990Z [store-api] error POST  - notNull Violation: suppliers.supplierId cannot be null
+2022-10-04T20:51:29.505Z [store-api] error POST  - notNull Violation: suppliers.supplierId cannot be null
+2022-10-04T20:55:08.174Z [store-api] error POST  - notNull Violation: suppliers.supplierId cannot be null
+2022-10-04T20:55:24.306Z [store-api] info GET /clients
+2022-10-04T20:55:54.789Z [store-api] error POST  - notNull Violation: clients.clientId cannot be null
+2022-10-04T20:57:10.435Z [store-api] error POST  - null value in column "client_id" of relation "clients" violates not-null constraint
+2022-10-04T21:01:28.174Z [store-api] error POST  - notNull Violation: clients.clientId cannot be null
+2022-10-04T21:01:49.686Z [store-api] info POST /client - {"clientId":5,"name":"Fernando","cpf":"32145","phone":"12345612","email":"Fernando@teste.com","adress":"Rua a"}
+2022-10-04T21:03:09.120Z [store-api] info GET /clients
+2022-10-04T21:06:50.329Z [store-api] info GET /suppliers
+2022-10-04T21:07:00.441Z [store-api] error POST  - notNull Violation: suppliers.supplierId cannot be null
+2022-10-04T21:08:14.582Z [store-api] info POST /supplier - {"supplierId":2,"name":"Fornecedor 2","cnpj":"123456789","phone":"123456342","email":"B@teste.com","adress":"Rua 21"}
+2022-10-05T02:20:22.272Z [store-api] info GET /suppliers
+2022-10-05T02:21:05.268Z [store-api] error POST  - notNull Violation: suppliers.supplierId cannot be null
+2022-10-05T02:21:56.406Z [store-api] error POST  - notNull Violation: suppliers.supplierId cannot be null
+2022-10-05T02:22:00.196Z [store-api] error POST  - notNull Violation: suppliers.supplierId cannot be null
+2022-10-05T02:22:17.563Z [store-api] error GET  - connect is not a function
+2022-10-05T02:22:46.449Z [store-api] info GET /sales
+2022-10-05T02:23:15.162Z [store-api] info GET /products
+2022-10-05T02:23:23.755Z [store-api] info GET /clients
+2022-10-05T02:23:44.255Z [store-api] error POST  - value, date, client_id e product_id são obrigatórios
+2022-10-05T02:24:33.390Z [store-api] error POST  - saleRepository.saleCreate is not a function
+2022-10-05T02:27:40.560Z [store-api] error POST  - notNull Violation: sales.saleId cannot be null
+2022-10-05T02:27:53.533Z [store-api] error POST  - null value in column "sale_id" of relation "sales" violates not-null constraint
+2022-10-05T02:28:33.978Z [store-api] info POST /sale - {"saleId":2,"value":"4000","date":"2022-09-28","clientId":4,"productId":4}
+2022-10-05T02:28:42.988Z [store-api] info GET /sales
+2022-10-05T02:36:53.487Z [store-api] info GET /sales
+2022-10-05T02:50:58.372Z [store-api] error DELETE  - connect is not a function
+2022-10-05T02:53:14.613Z [store-api] error DELETE  - saleRepository.getProduct is not a function
+2022-10-05T02:56:07.022Z [store-api] info DELETE /sale Id: 2
+2022-10-05T02:56:14.209Z [store-api] info GET /sales
+2022-10-05T03:07:28.061Z [store-api] error PUT  - conn is not defined
+2022-10-05T03:07:50.943Z [store-api] info UPDATE /sale - undefined
+2022-10-05T03:08:48.225Z [store-api] info UPDATE /sale - undefined
+2022-10-05T03:11:14.847Z [store-api] info UPDATE /sale - undefined
+2022-10-05T03:11:42.804Z [store-api] info UPDATE /sale - undefined
+2022-10-05T03:12:00.583Z [store-api] info UPDATE /sale - undefined
+2022-10-05T03:12:40.097Z [store-api] error PUT  - Unexpected token u in JSON at position 0
+2022-10-05T03:12:40.100Z [store-api] error PUT  - Cannot set headers after they are sent to the client
+2022-10-05T03:13:32.406Z [store-api] info GET /sales
+2022-10-05T03:49:55.725Z [store-api] info GET /products
+2022-10-05T03:50:35.002Z [store-api] info GET /sales
+2022-10-05T03:50:40.548Z [store-api] info GET /sales
+2022-10-05T03:50:53.112Z [store-api] info GET /sales
+2022-10-05T03:51:00.274Z [store-api] info GET /sales
+2022-10-05T03:51:03.123Z [store-api] info GET /sales
+2022-10-05T22:37:06.129Z [store-api] info GET /products
+2022-10-05T22:38:03.799Z [store-api] error GET  - invalid input syntax for type integer: "info"
+2022-10-05T22:38:27.411Z [store-api] info POST /product/info - {"productId":2,"categoria":"notebook","ano":2021,"peso":6.5,"_id":"633e0763c94858838b6ba27c"}
+2022-10-05T22:46:45.132Z [store-api] info PUT /product/info - {"productId":2,"categoria":"notebook gamer","ano":2021,"peso":6.5}
+2022-10-05T23:09:54.999Z [store-api] info GET /product Id: 4
+2022-10-05T23:12:32.788Z [store-api] info GET /product Id: 4
+2022-10-05T23:12:54.785Z [store-api] error GET  - Cannot set properties of null (setting 'info')
+2022-10-05T23:13:05.872Z [store-api] info GET /products
+2022-10-05T23:13:18.555Z [store-api] info GET /product Id: 3
+2022-10-05T23:13:22.941Z [store-api] info GET /product Id: 4
+2022-10-05T23:13:27.986Z [store-api] error GET  - Cannot set properties of null (setting 'info')
+2022-10-05T23:14:30.821Z [store-api] info POST /product/info - {"productId":4,"categoria":"Notebook Gamer","ano":2022,"peso":6.5,"GPU":"RTX 3060","_id":"633e0fd6f2509f78b8742882"}
+2022-10-05T23:14:36.835Z [store-api] info GET /product Id: 4
+2022-10-06T02:15:28.469Z [store-api] info GET /products
+2022-10-06T02:16:12.229Z [store-api] info GET /product Id: 3
+2022-10-06T02:16:18.962Z [store-api] info GET /product Id: 4
+2022-10-06T02:17:05.505Z [store-api] info POST /product/info - {"productId":3,"categoria":"Notebook AMD","ano":2022,"peso":7,"GPU":"XT 6600","CPU":"Ryzen 7 4600","_id":"633e3aa18567b215e1a77ad4"}
+2022-10-06T02:17:19.746Z [store-api] info GET /product Id: 3
+2022-10-06T02:32:29.174Z [store-api] info POST /product/info - {"productId":3,"categoria":"Notebook AMD","ano":2022,"peso":7,"GPU":"XT 6600","CPU":"Ryzen 7 4600","reviews":[],"_id":"633e3e3d32b289dac42d902e"}
+2022-10-06T02:33:30.415Z [store-api] info GET /products
+2022-10-06T02:33:54.579Z [store-api] info POST /product/info - {"productId":3,"categoria":"Notebook AMD","ano":2022,"peso":7,"GPU":"XT 6600","CPU":"Ryzen 7 4600","reviews":[],"_id":"633e3e9232b289dac42d902f"}
+2022-10-06T02:34:21.481Z [store-api] info POST /product/info - {"productId":4,"categoria":"Notebook Intel","ano":2022,"peso":8,"GPU":"RTX 3060","CPU":"Intel i7 12th","reviews":[],"_id":"633e3ead32b289dac42d9030"}

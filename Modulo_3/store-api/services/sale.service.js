@@ -4,10 +4,10 @@ import productRepository from "../repository/product.repository.js"
 
 async function createSale(sale) {
     let error = "";
-    if (!await clientRepository.getClient(sale.client_id)) {
+    if (!await clientRepository.getClient(sale.clientId)) {
         error = ("O Client ID não existe\n")
     }
-    const product = await productRepository.getProduct(sale.product_id)
+    const product = await productRepository.getProduct(sale.productId)
     if (!product) {
         error += ("O Product ID não existe")
     }
@@ -15,7 +15,7 @@ async function createSale(sale) {
         throw new Error(error);
     }
     if (product.stock > 0) {
-        sale = await saleRepository.saleCreate(sale)
+         sale = await saleRepository.createSale(sale)
         product.stock--;
         await productRepository.updateProduct(product);
         return sale;
@@ -24,7 +24,13 @@ async function createSale(sale) {
     }
 }
 
-async function getSales() {
+async function getSales(productId, supplierId) {
+    if (productId){ //Se passar algo como parametro ele vai procurar pelo productId, se não puxa tudo
+        return await saleRepository.getSalesByProductId(productId)
+    }
+    if(supplierId){
+        return await saleRepository.getSalesBySupplierId(supplierId) //Caso o usuario passe como parametro o supplierid para retornar as vendas desse supplier
+    }
     return await saleRepository.getSales();
 }
 
@@ -33,17 +39,26 @@ async function getSale(id) {
 }
 
 async function deleteSale(id) {
-    await saleRepository.deleteSale(id);
+    const sale = await saleRepository.getSale(id);
+    if(sale){
+        const product = await productRepository.getProduct(sale.productId);
+        await saleRepository.deleteSale(id);
+        product.stock ++;
+        await productRepository.updateProduct(product);
+    }else{
+        throw new Error("O id da venda informado não existe !")
+    }
+    
 }
 
 async function updateSale(sale) {
     let error = "";
-    if (!await clientRepository.getClient(sale.client_id)) {
-        error = ("O Client ID não existe\n")
+    if (!await clientRepository.getClient(sale.clientId)) {
+        error = ("O Client ID não existe. ")
     }
-    const product = await productRepository.getProduct(sale.product_id)
+    const product = await productRepository.getProduct(sale.productId)
     if (!product) {
-        error += ("O Product ID não existe")
+        error += ("O Product ID não existe. ")
     }
     if (error) {
         throw new Error(error);

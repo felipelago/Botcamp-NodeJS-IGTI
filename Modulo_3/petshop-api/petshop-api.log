@@ -1,0 +1,59 @@
+2022-10-06T04:42:06.868Z [petshop-api] info GET /proprietario
+2022-10-06T04:43:59.253Z [petshop-api] info GET /proprietario
+2022-10-06T05:37:40.083Z [petshop-api] info GET /proprietario
+2022-10-06T05:43:27.778Z [petshop-api] info POST /proprietario - {"nome":"Felipe","telefone":"(71) 99100101"}
+2022-10-06T05:47:33.861Z [petshop-api] info GET /proprietario/ id:1
+2022-10-06T05:55:30.923Z [petshop-api] info GET /proprietario/ id:7
+2022-10-06T05:55:55.811Z [petshop-api] info GET /proprietario/ id:7
+2022-10-06T05:57:17.312Z [petshop-api] info GET /proprietario Id: 7
+2022-10-06T05:57:38.341Z [petshop-api] info GET /proprietario Id: 1
+2022-10-06T05:57:41.801Z [petshop-api] info GET /proprietario
+2022-10-06T05:59:05.612Z [petshop-api] info GET /proprietario Id: 7
+2022-10-06T05:59:12.014Z [petshop-api] info GET /proprietario Id: 2
+2022-10-06T05:59:22.528Z [petshop-api] error PUT  - WHERE parameter "proprietario_id" has invalid "undefined" value
+2022-10-06T06:00:41.025Z [petshop-api] error PUT  - WHERE parameter "proprietario_id" has invalid "undefined" value
+2022-10-06T06:00:58.083Z [petshop-api] error PUT  - WHERE parameter "proprietario_id" has invalid "undefined" value
+2022-10-06T06:04:00.817Z [petshop-api] error PUT  - WHERE parameter "proprietario_id" has invalid "undefined" value
+2022-10-06T06:04:09.155Z [petshop-api] error PUT  - WHERE parameter "proprietario_id" has invalid "undefined" value
+2022-10-06T06:04:17.372Z [petshop-api] error PUT  - WHERE parameter "proprietario_id" has invalid "undefined" value
+2022-10-06T06:07:12.251Z [petshop-api] info PUT /proprietario - undefined
+2022-10-06T06:11:32.687Z [petshop-api] error DELETE  - Missing where or truncate attribute in the options parameter of model.destroy.
+2022-10-06T06:12:57.627Z [petshop-api] info DELETE /proprietario Id: 7
+2022-10-06T06:14:09.489Z [petshop-api] info GET /proprietario Id: 6
+2022-10-06T06:16:40.520Z [petshop-api] info GET /proprietario Id: 6
+2022-10-06T06:16:44.091Z [petshop-api] info GET /proprietario
+2022-10-06T06:16:52.398Z [petshop-api] info POST /proprietario - {"nome":"Felipe L.","telefone":"(71) 99100101"}
+2022-10-06T06:17:10.828Z [petshop-api] info POST /proprietario - {"nome":"Felipe Lag.","telefone":"(71) 99100101"}
+2022-10-06T06:19:55.932Z [petshop-api] error PUT  - WHERE parameter "proprietario_id" has invalid "undefined" value
+2022-10-06T06:20:37.864Z [petshop-api] error PUT  - Proprietario ID, Nome e telefone são obrigatórios
+2022-10-06T06:20:58.415Z [petshop-api] info PUT /proprietario - undefined
+2022-10-06T06:21:17.976Z [petshop-api] info PUT /proprietario - undefined
+2022-10-06T06:22:25.186Z [petshop-api] info PUT /proprietario - {"proprietarioId":8,"nome":"Felipe Lago P","telefone":"(71) 99100101"}
+2022-10-06T06:22:34.645Z [petshop-api] info GET /proprietario Id: 8
+2022-10-06T06:22:38.864Z [petshop-api] info GET /proprietario
+2022-10-06T06:23:05.331Z [petshop-api] info DELETE /proprietario Id: 8
+2022-10-06T06:23:08.389Z [petshop-api] info DELETE /proprietario Id: 9
+2022-10-06T06:32:17.574Z [petshop-api] info GET /proprietario
+2022-10-06T06:32:32.247Z [petshop-api] error GET  - relation "animals" does not exist
+2022-10-06T06:33:33.940Z [petshop-api] error GET  - relation "animals" does not exist
+2022-10-06T06:33:55.594Z [petshop-api] error GET  - relation "animals" does not exist
+2022-10-06T06:33:59.399Z [petshop-api] error GET  - relation "animals" does not exist
+2022-10-06T21:46:40.100Z [petshop-api] error GET  - relation "animals" does not exist
+2022-10-06T21:53:11.885Z [petshop-api] info GET /animal
+2022-10-06T21:53:19.511Z [petshop-api] info GET /proprietario
+2022-10-06T21:53:34.964Z [petshop-api] info GET /animal Id: 1
+2022-10-06T21:58:54.550Z [petshop-api] info GET /animal
+2022-10-06T21:59:11.882Z [petshop-api] error DELETE  - AnimalRepository.findByPk is not a function
+2022-10-06T21:59:43.267Z [petshop-api] error DELETE  - update or delete on table "proprietarios" violates foreign key constraint "fk_proprietarios" on table "animais"
+2022-10-06T22:00:39.833Z [petshop-api] error DELETE  - update or delete on table "proprietarios" violates foreign key constraint "fk_proprietarios" on table "animais"
+2022-10-06T22:01:48.630Z [petshop-api] info POST /proprietario - {"nome":"Felipe Lago P","telefone":"(71) 99100101"}
+2022-10-06T22:01:53.321Z [petshop-api] info GET /proprietario
+2022-10-06T22:02:16.322Z [petshop-api] error DELETE  - Cannot read properties of null (reading 'lenght')
+2022-10-06T22:02:39.792Z [petshop-api] error DELETE  - Cannot read properties of null (reading 'length')
+2022-10-06T22:03:09.633Z [petshop-api] error DELETE  - Cannot read properties of null (reading 'length')
+2022-10-06T22:03:21.843Z [petshop-api] error DELETE  - Cannot read properties of null (reading 'length')
+2022-10-06T22:03:35.843Z [petshop-api] error DELETE  - Cannot read properties of null (reading 'length')
+2022-10-06T22:24:51.132Z [petshop-api] error DELETE  - Não é possível excluir o produto pois existem vendas
+2022-10-06T22:30:12.092Z [petshop-api] error GET  - animais is not associated to proprietarios!
+2022-10-06T22:42:06.647Z [petshop-api] info GET /proprietario
+2022-10-06T22:43:55.538Z [petshop-api] info GET /animal

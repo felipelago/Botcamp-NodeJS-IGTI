@@ -45,7 +45,7 @@ async function deleteClient(req, res, next) {
 async function updateClient(req, res, next) {
     try {
         let client = req.body;
-        if (!client.client_id || !client.name || !client.cpf || !client.phone || !client.email || !client.adress) {
+        if (!client.clientId || !client.name || !client.cpf || !client.phone || !client.email || !client.adress) {
             throw new Error("Client ID, Name, CPF, Phone, Email e Adress são obrigatórios");
         }
         client = await clientService.updateClient(client)

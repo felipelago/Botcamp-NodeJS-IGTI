@@ -1,65 +1,51 @@
-import { connect } from './db.js';
+import Supplier from '../models/supplier.model.js';
 
 async function createSupplier(supplier) {
-    const conn = await connect();
     try {
-        const sql = "INSERT INTO suppliers (name, cnpj, phone, email, adress) VALUES ($1, $2, $3, $4, $5) RETURNING *" //Não pode concatenar as variáveis diretamente pois é inseguro, é possível fazer sql injection
-        const values = [supplier.name, supplier.cnpj, supplier.phone, supplier.email, supplier.adress];
-        const res = await conn.query(sql, values); //dessa forma vai garantir que execute como unico comando, para previnir que haja um SQL Injection (inserir querys falsas)
-        return res.rows[0];
+        return await Supplier.create(supplier);
     } catch (err) {
-        throw err
-    } finally {
-        conn.release();//Para liberar a conexão, sempre vai liberar, mesmo que aconteça erro no try
+        throw err;
     }
 }
 
 async function getSuppliers() {
-    const conn = await connect();
     try {
-        const res = await conn.query("SELECT * FROM suppliers");
-        return res.rows;
+        return await Supplier.findAll();
     } catch (err) {
-        throw (err)
-    } finally {
-        conn.release()
+        throw err;
     }
 }
 
 async function getSupplier(id) {
-    const conn = await connect();
     try {
-        const res = await conn.query("SELECT * FROM suppliers WHERE supplier_id = $1", [id]);
-        return res.rows[0]; //rows é onde é salvo os elementos puxado da DB, como está puxando somente um elemento, é posto [0] para retornar o primeiro elemento da lista
+        return await Supplier.findByPk(id); //procurar pela primary key
     } catch (err) {
-        throw (err)
-    } finally {
-        conn.release()
+        throw err
     }
 }
 
 async function updateSupplier(supplier) {
-    const conn = await connect();
     try {
-        const sql = "UPDATE suppliers SET name = $1, cnpj = $2, phone = $3, email = $4, adress = $5 WHERE supplier_id = $6 RETURNING *";
-        const values = [supplier.name, supplier.cnpj, supplier.phone, supplier.email, supplier.adress, supplier.supplier_id];
-        const res = await conn.query(sql, values);
-        return res.rows[0] //sempre que for retornar um elemento só, coloca rows[0], se for vários deixa rows
+        await Supplier.update(supplier, {
+            where:{
+                supplierId: supplier.supplierId
+            }
+        });
+        return await getSupplier(supplier.supplierId)
     } catch (err) {
-        throw (err)
-    } finally {
-        conn.release()
+        throw err;
     }
 }
 
 async function deleteSupplier(id) {
-    const conn = await connect();
     try {
-        await conn.query("DELETE FROM suppliers WHERE supplier_id = $1", [id]);
+        await Supplier.destroy({
+            where:{
+                supplierId: id
+            }
+        })
     } catch (err) {
-        throw (err)
-    } finally {
-        conn.release()
+        throw err;
     }
 }
 

@@ -1,66 +1,107 @@
-import { connect } from './db.js';
+import connect from './db.js';
+import Sale from "../models/sale.model.js"
+import Product from "../models/product.model.js"
+import Client from "../models/client.model.js"
 
 async function createSale(sale) {
-    const conn = await connect();
     try {
-        const sql = "INSERT INTO sales (value, date, client_id, product_id) VALUES ($1, $2, $3, $4) RETURNING *" //Não pode concatenar as variáveis diretamente pois é inseguro, é possível fazer sql injection
-        const values = [sale.value, sale.date, sale.client_id, sale.product_id];
-        const res = await conn.query(sql, values); //dessa forma vai garantir que execute como unico comando, para previnir que haja um SQL Injection (inserir querys falsas)
-        return res.rows[0];
+        return await Sale.create(sale);
     } catch (err) {
         throw err
-    } finally {
-        conn.release();//Para liberar a conexão, sempre vai liberar, mesmo que aconteça erro no try
     }
 }
 
 async function getSales() {
-    const conn = await connect();
     try {
-        const res = await conn.query("SELECT * FROM sales");
-        return res.rows;
+        return await Sale.findAll({
+            include: [
+                {
+                    model: Product //Assim quando for puxar as vendas, o product relacionado ao productId vai vim junto listado(ele vai incluir a relação de product, isso só funciona se a tabela tiver relação)
+                },
+                {
+                    model: Client
+                }
+            ]
+        });
     } catch (err) {
-        throw (err)
-    } finally {
-        conn.release()
+        throw err
+    }
+
+}
+
+async function getSalesByProductId(productId) {
+    try {
+        return await Sale.findAll({
+            where: {
+                productId: productId //onde productId(no banco de dados) é igual ao productId(recebendo como parametro)
+            },
+            include: [
+                {
+                    model: Client
+                }
+            ]
+        })
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function getSalesBySupplierId(supplierId){
+    try {
+        return await Sale.findAll({
+            include: [
+                {
+                    model: Product,
+                    where: {
+                        supplierId: supplierId
+                    }
+                }
+            ]
+        })
+    } catch (err) {
+        throw err;
     }
 }
 
 async function getSale(id) {
-    const conn = await connect();
     try {
-        const res = await conn.query("SELECT * FROM sales WHERE sale_id = $1", [id]);
-        return res.rows[0]; //rows é onde é salvo os elementos puxado da DB, como está puxando somente um elemento, é posto [0] para retornar o primeiro elemento da lista
+        return await Sale.findByPk(id);
     } catch (err) {
         throw (err)
-    } finally {
-        conn.release()
     }
 }
 
 async function updateSale(sale) {
-    const conn = await connect();
     try {
-        const sql = "UPDATE sales SET value = $1, date = $2, client_id = $3, product_id = $4, sale_id= $5 RETURNING *";
-        const values = [sale.value, sale.date, sale.client_id, sale.product_id, sale.sale_id];
-        const res = await conn.query(sql, values);
-        return res.rows[0] //sempre que for retornar um elemento só, coloca rows[0], se for vários deixa rows
+        await Sale.update(
+            {
+                value: sale.value, //Caso queira selecionar quais campos quer fazer update, caso queira atualizar tudo é só passar o sale como primeiro parametro e não um objeto como esse
+                date: sale.date,
+                clientId: sale.clientId
+            },
+            {
+                where: {
+                    saleId: sale.saleId
+                }
+            }
+        )
+        return await getSale(sale.saleId)
     } catch (err) {
         throw (err)
-    } finally {
-        conn.release()
     }
 }
 
 async function deleteSale(id) {
-    const conn = await connect();
     try {
-        await conn.query("DELETE FROM sales WHERE sale_id = $1", [id]);
+        await Sale.destroy({
+            where: {
+                saleId: id
+            }
+        });
     } catch (err) {
         throw (err)
-    } finally {
-        conn.release()
     }
+
 }
 
 export default {
@@ -68,5 +109,7 @@ export default {
     getSales,
     getSale,
     updateSale,
-    deleteSale
+    deleteSale,
+    getSalesByProductId,
+    getSalesBySupplierId
 }

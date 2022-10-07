@@ -45,7 +45,7 @@ async function deleteSupplier(req, res, next) {
 async function updateSupplier(req, res, next) {
     try {
         let supplier = req.body;
-        if (!supplier.supplier_id || !supplier.name || !supplier.cnpj || !supplier.phone || !supplier.email || !supplier.adress) {
+        if (!supplier.supplierId || !supplier.name || !supplier.cnpj || !supplier.phone || !supplier.email || !supplier.adress) {
             throw new Error("Supplier ID, Name, CNPJ, Phone, Email e Adress são obrigatórios");
         }
         supplier = await supplierService.updateSupplier(supplier)
